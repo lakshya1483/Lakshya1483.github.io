@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lakshya Kumar | Portfolio</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#050d05;color:#e2ffe2;scroll-behavior:smooth;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#0a0f0a;}
+::-webkit-scrollbar-thumb{background:#22c55e;border-radius:4px;}
+nav{background:rgba(5,13,5,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(74,222,128,0.12);padding:16px 48px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;}
+.logo{font-size:22px;font-weight:800;color:#4ade80;font-family:monospace;letter-spacing:2px;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:13px;color:#86efac;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:color .2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:#4ade80;transition:width .3s;}
+.nav-links a:hover{color:#4ade80;}
+.nav-links a:hover::after{width:100%;}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 48px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(74,222,128,0.07) 0%,transparent 70%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(74,222,128,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(74,222,128,0.03) 1px,transparent 1px);background-size:60px 60px;}
+.hero-content{position:relative;max-width:700px;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(74,222,128,0.3);background:rgba(74,222,128,0.05);color:#4ade80;font-size:12px;padding:6px 16px;border-radius:100px;margin-bottom:28px;letter-spacing:1.5px;text-transform:uppercase;}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{font-size:62px;font-weight:800;line-height:1.05;margin-bottom:8px;letter-spacing:-1px;}
+.hero h1 .name{color:#4ade80;display:inline-block;}
+.hero-role{font-size:20px;color:#86efac;margin-bottom:24px;font-weight:400;}
+.hero-role span{color:#4ade80;font-weight:600;}
+.hero-desc{font-size:16px;color:#6ee7a0;line-height:1.8;margin-bottom:40px;max-width:520px;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-green{background:#4ade80;color:#050d05;padding:14px 32px;border-radius:8px;font-weight:700;font-size:15px;border:none;cursor:pointer;letter-spacing:0.5px;transition:all .2s;}
+.btn-green:hover{background:#22c55e;transform:translateY(-2px);}
+.btn-ghost{border:1px solid rgba(74,222,128,0.4);color:#4ade80;padding:14px 32px;border-radius:8px;font-weight:600;font-size:15px;background:transparent;cursor:pointer;letter-spacing:0.5px;transition:all .2s;}
+.btn-ghost:hover{border-color:#4ade80;background:rgba(74,222,128,0.06);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(74,222,128,0.1);}
+.stat-num{font-size:28px;font-weight:800;color:#4ade80;display:block;}
+.stat-label{font-size:12px;color:#6ee7a0;letter-spacing:1px;text-transform:uppercase;margin-top:2px;}
+section{padding:96px 48px;max-width:960px;margin:0 auto;}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;color:#4ade80;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;}
+.sec-eyebrow::before{content:'';display:inline-block;width:24px;height:1px;background:#4ade80;}
+.sec-title{font-size:38px;font-weight:800;color:#e2ffe2;margin-bottom:16px;letter-spacing:-0.5px;}
+.sec-sub{font-size:16px;color:#6ee7a0;line-height:1.7;max-width:540px;margin-bottom:48px;}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.about-text{font-size:16px;color:#a7f3a7;line-height:1.9;}
+.about-text p{margin-bottom:16px;}
+.about-highlight{color:#4ade80;font-weight:600;}
+.about-facts{display:flex;flex-direction:column;gap:16px;}
+.fact-item{display:flex;align-items:center;gap:14px;background:rgba(74,222,128,0.04);border:1px solid rgba(74,222,128,0.12);border-radius:12px;padding:16px 20px;transition:border-color .2s;}
+.fact-item:hover{border-color:rgba(74,222,128,0.35);}
+.fact-icon{width:38px;height:38px;border-radius:8px;background:rgba(74,222,128,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.fact-icon i{font-size:18px;color:#4ade80;}
+.fact-text{font-size:14px;color:#86efac;}
+.fact-text strong{color:#e2ffe2;display:block;font-size:15px;margin-bottom:2px;}
+.skills-bg{background:rgba(74,222,128,0.02);border-top:1px solid rgba(74,222,128,0.08);border-bottom:1px solid rgba(74,222,128,0.08);}
+.skills-inner{max-width:960px;margin:0 auto;padding:96px 48px;}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-top:48px;}
+.sk{background:rgba(5,13,5,0.8);border:1px solid rgba(74,222,128,0.12);border-radius:16px;padding:28px 20px;text-align:center;transition:all .3s;cursor:default;}
+.sk:hover{border-color:rgba(74,222,128,0.5);transform:translateY(-6px);background:rgba(74,222,128,0.04);}
+.sk i{font-size:32px;color:#4ade80;display:block;margin-bottom:14px;}
+.sk-name{font-size:14px;color:#e2ffe2;font-weight:600;margin-bottom:10px;}
+.sk-bar-bg{height:3px;background:rgba(74,222,128,0.12);border-radius:3px;overflow:hidden;}
+.sk-bar{height:3px;background:linear-gradient(90deg,#16a34a,#4ade80);border-radius:3px;width:0;transition:width 1.4s ease;}
+.sk-pct{font-size:11px;color:#4ade80;margin-top:6px;letter-spacing:1px;}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.proj{background:rgba(5,13,5,0.9);border:1px solid rgba(74,222,128,0.1);border-radius:18px;padding:28px;transition:all .3s;position:relative;overflow:hidden;}
+.proj::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#16a34a,#4ade80);opacity:0;transition:opacity .3s;}
+.proj:hover{border-color:rgba(74,222,128,0.35);transform:translateY(-6px);}
+.proj:hover::before{opacity:1;}
+.proj-num{font-size:11px;color:rgba(74,222,128,0.4);letter-spacing:2px;margin-bottom:16px;font-family:monospace;}
+.proj-ico{width:48px;height:48px;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.proj-ico i{font-size:22px;color:#4ade80;}
+.proj h3{font-size:18px;font-weight:700;color:#e2ffe2;margin-bottom:10px;}
+.proj p{font-size:14px;color:#6ee7a0;line-height:1.7;margin-bottom:20px;}
+.proj-tags{display:flex;gap:8px;flex-wrap:wrap;}
+.ptag{font-size:11px;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);color:#4ade80;padding:4px 12px;border-radius:100px;letter-spacing:0.5px;}
+.contact-wrap{background:rgba(74,222,128,0.03);border:1px solid rgba(74,222,128,0.1);border-radius:24px;padding:56px;text-align:center;position:relative;overflow:hidden;}
+.contact-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 50%,rgba(74,222,128,0.05) 0%,transparent 70%);}
+.contact-wrap *{position:relative;}
+.contact-wrap h2{font-size:38px;font-weight:800;color:#e2ffe2;margin-bottom:12px;}
+.contact-wrap p{font-size:16px;color:#6ee7a0;margin-bottom:40px;line-height:1.7;}
+.contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.clink{display:flex;align-items:center;gap:10px;background:rgba(74,222,128,0.06);border:1px solid rgba(74,222,128,0.2);color:#86efac;padding:14px 24px;border-radius:12px;font-size:14px;font-weight:500;transition:all .2s;cursor:pointer;text-decoration:none;}
+.clink:hover{border-color:#4ade80;color:#4ade80;background:rgba(74,222,128,0.1);transform:translateY(-2px);}
+.clink i{font-size:18px;}
+footer{text-align:center;padding:32px;color:rgba(74,222,128,0.3);font-size:13px;border-top:1px solid rgba(74,222,128,0.08);font-family:monospace;letter-spacing:1px;}
+@media(max-width:640px){
+  .hero h1{font-size:38px;}
+  nav{padding:14px 20px;}
+  section,.skills-inner{padding:64px 20px;}
+  .about-wrap{grid-template-columns:1fr;}
+  .hero{padding:60px 20px;}
+  .hero-stats{gap:24px;}
+  .contact-wrap{padding:32px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">&lt; LK /&gt;</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag"><span class="hero-tag-dot"></span> Available for Internships</div>
+    <h1>Hi, I'm<br><span class="name" id="typed-name"></span></h1>
+    <div class="hero-role">Aspiring <span>Web Developer</span> & BCA Student</div>
+    <p class="hero-desc">I build clean, modern websites and am passionate about turning ideas into reality through code. Currently in my 1st year of BCA — learning, building, and growing every day.</p>
+    <div class="hero-btns">
+      <button class="btn-green" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View My Work</button>
+      <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Connect</button>
+    </div>
+    <div class="hero-stats">
+      <div><span class="stat-num" id="cnt1">0</span><span class="stat-label">Projects Built</span></div>
+      <div><span class="stat-num" id="cnt2">0</span><span class="stat-label">Skills Learning</span></div>
+      <div><span class="stat-num" id="cnt3">0</span><span class="stat-label">Year of BCA</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="sec-eyebrow">About Me</div>
+  <div class="sec-title">The Person Behind the Code</div>
+  <div class="about-wrap">
+    <div class="about-text">
+      <p>I'm <span class="about-highlight">Lakshya Kumar</span>, a driven BCA 1st year student from India with a genuine passion for web development and technology.</p>
+      <p>I believe the best way to learn is by building. Every project I take on teaches me something new — whether it's a cleaner way to write CSS, a smarter JavaScript pattern, or better UX thinking.</p>
+      <p>My goal is to become a <span class="about-highlight">full-stack developer</span> who builds products that make a real difference. I'm constantly learning, experimenting, and pushing my limits.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact-item"><div class="fact-icon"><i class="ti ti-school"></i></div><div class="fact-text"><strong>BCA — 1st Year</strong>Bachelor of Computer Applications</div></div>
+      <div class="fact-item"><div class="fact-icon"><i class="ti ti-map-pin"></i></div><div class="fact-text"><strong>India</strong>Open to remote opportunities</div></div>
+      <div class="fact-item"><div class="fact-icon"><i class="ti ti-code"></i></div><div class="fact-text"><strong>Web Developer</strong>HTML · CSS · JavaScript</div></div>
+      <div class="fact-item"><div class="fact-icon"><i class="ti ti-rocket"></i></div><div class="fact-text"><strong>Goal</strong>Full-Stack Developer</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="skills-bg" id="skills">
+  <div class="skills-inner">
+    <div class="sec-eyebrow">Skills</div>
+    <div class="sec-title">My Tech Stack</div>
+    <div class="sec-sub">Technologies I work with and am actively improving every day.</div>
+    <div class="skills-grid" id="skillGrid">
+      <div class="sk" data-pct="85"><i class="ti ti-brand-html5"></i><div class="sk-name">HTML5</div><div class="sk-bar-bg"><div class="sk-bar"></div></div><div class="sk-pct">85%</div></div>
+      <div class="sk" data-pct="75"><i class="ti ti-brand-css3"></i><div class="sk-name">CSS3</div><div class="sk-bar-bg"><div class="sk-bar"></div></div><div class="sk-pct">75%</div></div>
+      <div class="sk" data-pct="55"><i class="ti ti-brand-javascript"></i><div class="sk-name">JavaScript</div><div class="sk-bar-bg"><div class="sk-bar"></div></div><div class="sk-pct">55%</div></div>
+      <div class="sk" data-pct="50"><i class="ti ti-database"></i><div class="sk-name">MySQL</div><div class="sk-bar-bg"><div class="sk-bar"></div></div><div class="sk-pct">50%</div></div>
+      <div class="sk" data-pct="65"><i class="ti ti-brand-github"></i><div class="sk-name">GitHub</div><div class="sk-bar-bg"><div class="sk-bar"></div></div><div class="sk-pct">65%</div></div>
+      <div class="sk" data-pct="70"><i class="ti ti-device-laptop"></i><div class="sk-name">Responsive</div><div class="sk-bar-bg"><div class="sk-bar"></div></div><div class="sk-pct">70%</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="sec-eyebrow">Projects</div>
+  <div class="sec-title">Things I've Built</div>
+  <div class="sec-sub">A collection of projects that showcase my learning journey and skills.</div>
+  <div class="proj-grid">
+    <div class="proj">
+      <div class="proj-num">01 — Featured</div>
+      <div class="proj-ico"><i class="ti ti-user-circle"></i></div>
+      <h3>Portfolio Website</h3>
+      <p>A fully responsive personal portfolio to showcase my skills, projects, and contact info. Built from scratch with clean HTML & CSS.</p>
+      <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-num">02 — App</div>
+      <div class="proj-ico"><i class="ti ti-checkbox"></i></div>
+      <h3>To-Do List App</h3>
+      <p>A smart task manager with add, complete, delete, and filter functionality. Stores tasks locally so nothing gets lost on refresh.</p>
+      <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JS</span></div>
+    </div>
+    <div class="proj">
+      <div class="proj-num">03 — API</div>
+      <div class="proj-ico"><i class="ti ti-cloud"></i></div>
+      <h3>Weather App</h3>
+      <p>Real-time weather data for any city using a public API. Shows temperature, humidity, and conditions with a clean UI.</p>
+      <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">API</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="sec-eyebrow" style="justify-content:center;">Contact</div>
+    <h2>Let's Work Together</h2>
+    <p>I'm open to internships, collaborations, and any opportunity to grow as a developer. Don't hesitate to reach out!</p>
+    <div class="contact-links">
+      <a class="clink" href="mailto:lakshya@email.com"><i class="ti ti-mail"></i> lakshya@email.com</a>
+      <a class="clink" href="#"><i class="ti ti-brand-linkedin"></i> LinkedIn</a>
+      <a class="clink" href="#"><i class="ti ti-brand-github"></i> GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 &nbsp;·&nbsp; Lakshya Kumar &nbsp;·&nbsp; Built with HTML & CSS</footer>
+
+<script>
+const name = "Lakshya Kumar";
+let i = 0;
+const el = document.getElementById('typed-name');
+function type(){
+  if(i <= name.length){
+    el.textContent = name.slice(0,i) + (i < name.length ? '|' : '');
+    i++;
+    setTimeout(type, i === name.length + 1 ? 0 : 80);
+  }
+}
+setTimeout(type, 600);
+
+function animCount(id, target, suffix){
+  const el = document.getElementById(id);
+  let c = 0;
+  const step = Math.ceil(target / 40);
+  const t = setInterval(()=>{
+    c = Math.min(c + step, target);
+    el.textContent = c + (suffix||'');
+    if(c >= target) clearInterval(t);
+  }, 40);
+}
+setTimeout(()=>{
+  animCount('cnt1', 3, '+');
+  animCount('cnt2', 6, '+');
+  animCount('cnt3', 1, 'st');
+}, 800);
+
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.sk-bar').forEach((bar, idx)=>{
+        const pct = e.target.querySelectorAll('.sk')[idx]?.dataset.pct || 70;
+        setTimeout(()=>{ bar.style.width = pct + '%'; }, idx * 100);
+      });
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+const grid = document.getElementById('skillGrid');
+if(grid) obs.observe(grid);
+</script>
+
+</body>
+</html>
